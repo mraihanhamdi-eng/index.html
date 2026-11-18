@@ -31,7 +31,7 @@
             background-color: var(--bg-dark);
             color: var(--text-white);
             font-family: 'Space Grotesk', sans-serif;
-            line-height: 1.6;
+            line-height: 1.65;
             overflow-x: hidden;
         }
 
@@ -162,6 +162,10 @@
             background-color: var(--bg-card-hover);
         }
 
+        .card.full-span {
+            grid-column: 1 / -1;
+        }
+
         .card-header {
             display: flex;
             justify-content: space-between;
@@ -185,215 +189,4 @@
         }
 
         .badge.warn {
-            background: rgba(255, 59, 48, 0.15);
-            color: var(--danger-red);
-            border-color: var(--danger-red);
-        }
-
-        .card p, .card ul {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        .card ul {
-            margin-top: 0.5rem;
-            padding-left: 1.2rem;
-        }
-
-        .card ul li {
-            margin-bottom: 0.35rem;
-        }
-
-        .card strong {
-            color: var(--text-white);
-        }
-
-        /* Warning Alert Box */
-        .alert-box {
-            background-color: rgba(255, 209, 0, 0.08);
-            border-left: 4px solid var(--accent-yellow);
-            padding: 1.2rem 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .alert-box h4 {
-            font-family: 'Oswald', sans-serif;
-            color: var(--accent-yellow);
-            margin-bottom: 0.35rem;
-            letter-spacing: 0.05em;
-        }
-
-        /* Interactive Speedo Simulator Box (Bagian Bawah) */
-        .simulator-section {
-            margin-top: 4rem;
-            padding-top: 2.5rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .meter-sim {
-            background: #121212;
-            border: 2px solid var(--accent-yellow);
-            padding: 1.75rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .meter-top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .meter-top-bar h3 {
-            color: var(--accent-yellow);
-            font-size: 1.4rem;
-            letter-spacing: 0.06em;
-        }
-
-        .meter-screen {
-            background: #000000;
-            border: 1px solid #333;
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .meter-readout {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2rem;
-            color: var(--accent-yellow);
-        }
-
-        .meter-desc {
-            font-size: 0.95rem;
-            color: var(--text-gray);
-            max-width: 580px;
-        }
-
-        .meter-controls {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .sim-btn {
-            background-color: var(--text-white);
-            color: #000;
-            border: none;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: 0.95rem;
-            padding: 0.55rem 1.3rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: background-color 0.2s ease;
-        }
-
-        .sim-btn:hover {
-            background-color: var(--accent-yellow);
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            margin-top: 4rem;
-        }
-
-        footer span {
-            color: var(--accent-yellow);
-            font-weight: 700;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="header-container">
-            <div class="tag-line">MY RETRO by Vizmind Motorcycle</div>
-            <h1>INSTRUMEN & FUNGSI KONTROL <span>YAMAHA XSR 155</span></h1>
-            <p>Panduan Digital berdasarkan Manual Book Resmi Yamaha XSR155.</p>
-        </div>
-    </header>
-
-    <nav>
-        <div class="nav-container">
-            <button class="nav-btn active" onclick="filterSection('all', this)">Semua Bagian</button>
-            <button class="nav-btn" onclick="filterSection('indikator', this)">1. Kunci & Indikator</button>
-            <button class="nav-btn" onclick="filterSection('panel', this)">2. Panel Meter</button>
-            <button class="nav-btn" onclick="filterSection('kontrol', this)">3. Kontrol Kemudi & Pedal</button>
-            <button class="nav-btn" onclick="filterSection('fitur', this)">4. Fitur & Keamanan</button>
-        </div>
-    </nav>
-
-    <main>
-        <!-- BAGIAN 1: KUNCI KONTAK & LAMPU INDIKATOR -->
-        <section class="section-block" data-category="indikator">
-            <h2 class="section-title">01. Kunci Kontak & Lampu Indikator</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Main Switch & Steering Lock</h3>
-                        <span class="badge">IGNITION</span>
-                    </div>
-                    <p>Mengontrol sistem pengapian dan kelistrikan lampu sekaligus mengunci setang kemudi. Dilengkapi anak kunci utama serta <strong>keyhole shutter key</strong> untuk menutup lubang kunci dari debu/air.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Turn Signal & High Beam</h3>
-                        <span class="badge">SIGNAL</span>
-                    </div>
-                    <p><strong>Indikator Sein:</strong> Berkedip sesuai arah lampu sein kiri atau kanan yang aktif.<br>
-                    <strong>Indikator High Beam:</strong> Menyala biru saat lampu jauh pada headlamp diaktifkan.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Neutral Indicator Light</h3>
-                        <span class="badge">GEAR N</span>
-                    </div>
-                    <p>Menyala hijau saat posisi transmisi berada di gigi netral. Pastikan indikator ini menyala sebelum melepas kopling saat mesin hidup.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Coolant Temp Warning</h3>
-                        <span class="badge warn">WARNING</span>
-                    </div>
-                    <p>Menyala jika suhu cairan pendingin mesin terlalu panas (<strong>overheating</strong>). Segera matikan mesin dan biarkan dingin. Lampu ini juga menyala sesaat saat kontak pertama kali diputar ke <em>ON</em>.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Engine Trouble Warning</h3>
-                        <span class="badge warn">DIAGNOSTIC</span>
-                    </div>
-                    <p>Menyala apabila sistem mendeteksi gangguan pada mesin atau sirkuit kontrol kendaraan. Segera periksakan sistem diagnostik ke bengkel resmi Yamaha.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- BAGIAN 2: PANEL METER MULTI-FUNGSI -->
-        <section class="section-block" data-category="panel">
-            <h2 class="section-title">02. Panel Meter Multi-Fungsi</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Speedometer & Tachometer</h3>
-                        <span class="badge">RPM & SPEED</span>
-                    </div>
-                    <p><strong>Speedometer:</strong> Menampilkan kecepatan laju kendaraan.<br>
-                    <strong>Tachometer:</strong> Memantau putaran
+            background: rgba(255, 59

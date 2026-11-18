@@ -189,4 +189,539 @@
         }
 
         .badge.warn {
-            background: rgba(255, 59
+            background: rgba(255, 59, 48, 0.15);
+            color: var(--danger-red);
+            border-color: var(--danger-red);
+        }
+
+        .card p, .card ul {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .card ul {
+            margin-top: 0.65rem;
+            padding-left: 1.2rem;
+        }
+
+        .card ul li {
+            margin-bottom: 0.45rem;
+        }
+
+        .card strong {
+            color: var(--text-white);
+        }
+
+        .key-states {
+            margin-top: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .key-state-item span {
+            color: var(--accent-yellow);
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.05em;
+            margin-right: 0.35rem;
+        }
+
+        /* Sub-grid inside Multi-Function Display */
+        .mfd-subgrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .mfd-item {
+            background-color: #0D0D0D;
+            border: 1px solid #262626;
+            padding: 1rem;
+        }
+
+        .mfd-item h4 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--accent-yellow);
+            font-size: 1.05rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.3rem;
+        }
+
+        .mfd-item p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Interactive Speedo Simulator Box (Bagian Bawah) */
+        .simulator-section {
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .meter-sim {
+            background: #121212;
+            border: 2px solid var(--accent-yellow);
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .meter-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .meter-top-bar h3 {
+            color: var(--accent-yellow);
+            font-size: 1.4rem;
+            letter-spacing: 0.06em;
+        }
+
+        .meter-screen {
+            background: #000000;
+            border: 1px solid #333;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .meter-readout {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: var(--accent-yellow);
+        }
+
+        .meter-desc {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            max-width: 580px;
+        }
+
+        .meter-controls {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .sim-btn {
+            background-color: var(--text-white);
+            color: #000;
+            border: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 0.55rem 1.3rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.2s ease;
+        }
+
+        .sim-btn:hover {
+            background-color: var(--accent-yellow);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        footer span {
+            color: var(--accent-yellow);
+            font-weight: 700;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="tag-line">MY RETRO by Vizmind Motorcycle</div>
+            <h1>INSTRUMEN &amp; FUNGSI KONTROL <span>YAMAHA XSR 155</span></h1>
+            <p>Panduan Digital berdasarkan Manual Book Resmi Yamaha XSR 155</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <button class="nav-btn active" onclick="filterSection('all', this)">Semua Bagian</button>
+            <button class="nav-btn" onclick="filterSection('indikator', this)">1. Kunci Kontak &amp; Indikator</button>
+            <button class="nav-btn" onclick="filterSection('panel', this)">2. Panel Meter Multi-Fungsi</button>
+            <button class="nav-btn" onclick="filterSection('kontrol', this)">3. Kontrol Kemudi &amp; Pedal</button>
+            <button class="nav-btn" onclick="filterSection('fitur', this)">4. Fitur &amp; Keamanan</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- BAGIAN 1: KUNCI KONTAK & LAMPU INDIKATOR -->
+        <section class="section-block" data-category="indikator">
+            <h2 class="section-title">1. Kunci Kontak &amp; Lampu Indikator</h2>
+            <div class="grid">
+                <div class="card full-span">
+                    <div class="card-header">
+                        <h3>1.a. Kunci Kontak / Pengunci Setang</h3>
+                        <span class="badge">MAIN SWITCH</span>
+                    </div>
+                    <p>Berfungsi mengontrol sistem pengapian dan penerangan, sekaligus untuk mengunci setang kemudi. Unit ini dilengkapi dengan anak kunci utama serta kunci penutup lubang kunci.</p>
+                    <div class="key-states">
+                        <div class="key-state-item"><span>ON:</span> Semua sirkuit listrik terhubung dan lampu sepeda motor dinyalakan. Kunci kontak tidak dapat dicabut.</div>
+                        <div class="key-state-item"><span>OFF:</span> Semua aliran listrik terputus. Kunci kontak dapat dicabut.</div>
+                        <div class="key-state-item"><span>LOCK:</span> Kemudi terputus dan seluruh sistem kelistrikan terputus. Kunci Kontak dapat dicabut.</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>1.b. Lampu Indikator Sein</h3>
+                        <span class="badge">TURN SIGNAL</span>
+                    </div>
+                    <p><em>(Turn signal indicator lights)</em> Berkedip mengikuti lampu sein kiri atau kanan yang sedang diaktifkan.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>1.c. Lampu Indikator Netral</h3>
+                        <span class="badge">NEUTRAL</span>
+                    </div>
+                    <p><em>(Neutral indicator light)</em> Menyala saat posisi transmisi berada di gigi netral.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>1.d. Lampu Indikator Lampu Jauh</h3>
+                        <span class="badge">HIGH BEAM</span>
+                    </div>
+                    <p><em>(High beam indicator light)</em> Menyala ketika lampu jauh (high beam) pada lampu utama diaktifkan.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>1.e. Lampu Peringatan Suhu Cairan Pendingin</h3>
+                        <span class="badge warn">COOLANT TEMP</span>
+                    </div>
+                    <p><em>(Coolant temperature warning light)</em> Menyala jika mesin mengalami overheating, sehingga mesin harus segera dimatikan dan dibiarkan dingin. Lampu ini juga menyala selama beberapa detik saat kontak pertama kali diputar ke posisi on sebagai pengecekan fungsi.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>1.f. Lampu Peringatan Gangguan Mesin</h3>
+                        <span class="badge warn">ENGINE TROUBLE</span>
+                    </div>
+                    <p><em>(Engine trouble warning light)</em> Menyala apabila terdeteksi masalah pada mesin atau sistem kontrol kendaraan lainnya. Lampu ini turut menyala sesaat ketika kendaraan baru dihidupkan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN 2: PANEL METER MULTI-FUNGSI -->
+        <section class="section-block" data-category="panel">
+            <h2 class="section-title">2. Panel Meter Multi-Fungsi</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>2.a. Speedometer</h3>
+                        <span class="badge">SPEED</span>
+                    </div>
+                    <p>Menampilkan kecepatan laju kendaraan saat berkendara.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>2.b. Tachometer</h3>
+                        <span class="badge warn">RED ZONE 11K+</span>
+                    </div>
+                    <p>Memantau putaran mesin (r/min) agar tetap berada di rentang tenaga ideal. Mesin tidak boleh dioperasikan pada zona merah (red zone) yang dimulai dari 11.000 r/min ke atas.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>2.c. Meter Bahan Bakar</h3>
+                        <span class="badge">FUEL METER</span>
+                    </div>
+                    <p>Menunjukkan sisa volume bensin dari posisi "F" (penuh) menuju "E" (kosong). Segmen terakhir akan berkedip saat sisa bahan bakar mencapai sekitar 1,8 liter sebagai tanda untuk segera mengisi ulang.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>2.d. Indikator VVA</h3>
+                        <span class="badge">VVA SYSTEM</span>
+                    </div>
+                    <p><em>(Variable Valve Actuation)</em> Menyala saat sistem katup variabel beralih ke rentang kecepatan tinggi untuk menjaga efisiensi bahan bakar dan akselerasi.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>2.e. Indikator Posisi Gigi</h3>
+                        <span class="badge">GEAR DISPLAY</span>
+                    </div>
+                    <p>Menampilkan posisi gigi transmisi yang sedang aktif.</p>
+                </div>
+
+                <!-- 2.f Multi-Function Display -->
+                <div class="card full-span">
+                    <div class="card-header">
+                        <h3>2.f. Multi-Function Display</h3>
+                        <span class="badge">SELECT &amp; RESET</span>
+                    </div>
+                    <p>Dioperasikan menggunakan tombol <strong>"SELECT"</strong> (untuk mengganti tampilan) dan tombol <strong>"RESET"</strong> (untuk urutan sebaliknya atau mengatur ulang data) dengan pilihan menu berikut:</p>
+
+                    <div class="mfd-subgrid">
+                        <div class="mfd-item">
+                            <h4>2.f.1. Odometer (ODO)</h4>
+                            <p>Mencatat total jarak tempuh kendaraan dan akan terkunci di angka 999.999 (tidak dapat di-reset).</p>
+                        </div>
+
+                        <div class="mfd-item">
+                            <h4>2.f.2. Tripmeter (TRIP 1 &amp; TRIP 2)</h4>
+                            <p>Mengukur jarak tempuh sejak terakhir kali di-reset, dan akan kembali menghitung dari awal setelah mencapai 9.999,9.</p>
+                        </div>
+
+                        <div class="mfd-item">
+                            <h4>2.f.3. Fuel Reserve Tripmeter (TRIP F)</h4>
+                            <p>Muncul otomatis saat segmen bensin terakhir berkedip untuk menghitung jarak tempuh menggunakan bensin cadangan. Mode ini dapat di-reset secara manual atau otomatis hilang setelah mengisi ulang bensin dan menempuh jarak 5 km.</p>
+                        </div>
+
+                        <div class="mfd-item">
+                            <h4>2.f.4. Jam (Clock)</h4>
+                            <p>Menggunakan format waktu 12 jam yang diatur melalui kombinasi tombol "SELECT" dan "RESET".</p>
+                        </div>
+
+                        <div class="mfd-item">
+                            <h4>2.f.5. Konsumsi Bahan Bakar Seketika</h4>
+                            <p>Menampilkan konsumsi bensin secara real-time dalam satuan "km/L" atau "L/100 km" (menampilkan "_ ." jika kecepatan di bawah 10 km/jam).</p>
+                        </div>
+
+                        <div class="mfd-item">
+                            <h4>2.f.6. Konsumsi Bahan Bakar Rata-rata</h4>
+                            <p>Menampilkan rata-rata konsumsi bensin ("AVE_ . km/L" atau "AVE_ . L/100 km") sejak terakhir kali di-reset.</p>
+                        </div>
+
+                        <div class="mfd-item">
+                            <h4>2.f.7. Kecepatan Rata-rata</h4>
+                            <p>Menampilkan kecepatan rata-rata perjalanan ("AVE_ . km/h") sejak terakhir kali di-reset.</p>
+                        </div>
+
+                        <div class="mfd-item">
+                            <h4>2.f.8. Pengaturan Kecerahan Layar</h4>
+                            <p>Menyediakan tiga tingkat kecerahan layar ("bL-01", "bL-02", atau "bL-03") yang hanya boleh diubah saat motor berhenti total.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN 3: KONTROL KEMUDI, TUAS, & PEDAL -->
+        <section class="section-block" data-category="kontrol">
+            <h2 class="section-title">3. Kontrol Kemudi, Tuas, &amp; Pedal</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>3.a. Sakelar Setang Kemudi</h3>
+                        <span class="badge">HANDLEBAR</span>
+                    </div>
+                    <p>Terdiri dari sakelar setang kiri (mencakup sakelar dimmer/pass dan tombol klakson) serta sakelar setang kanan (mencakup sakelar start/engine stop yang harus berada di posisi run untuk menyalakan mesin).</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>3.b. Tuas Kopling</h3>
+                        <span class="badge">CLUTCH LEVER</span>
+                    </div>
+                    <p>Terletak di setang kiri; tarik ke arah grip untuk memutus kopling dan lepaskan perlahan untuk penyaluran tenaga yang halus. Tuas ini juga dilengkapi clutch switch yang terhubung dengan sistem keamanan starter.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>3.c. Pedal Pemindah Gigi</h3>
+                        <span class="badge">SHIFT PEDAL</span>
+                    </div>
+                    <p>Berada di sisi kiri bawah motor; cungkil ke atas untuk menaikkan gigi dan tekan ke bawah untuk menurunkan gigi.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>3.d. Tuas Rem Depan</h3>
+                        <span class="badge">FRONT BRAKE</span>
+                    </div>
+                    <p>Terletak di stang kanan dan ditarik ke arah selongsong gas (throttle grip) untuk mengaktifkan rem depan.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>3.e. Pedal Rem Belakang</h3>
+                        <span class="badge">REAR BRAKE</span>
+                    </div>
+                    <p>Berada di sisi kanan bawah motor dan ditekan ke bawah untuk mengaktifkan rem belakang.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN 4: FITUR PENDUKUNG & SISTEM KEAMANAN -->
+        <section class="section-block" data-category="fitur">
+            <h2 class="section-title">4. Fitur Pendukung &amp; Sistem Keamanan</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>4.a. Tutup Tangki Bahan Bakar</h3>
+                        <span class="badge">FUEL CAP</span>
+                    </div>
+                    <p>Dibuka dengan mengangkat penutup lubang kunci, memasukkan kunci, lalu memutarnya 1/4 putaran searah jarum jam.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>4.b. Bahan Bakar</h3>
+                        <span class="badge">10.4 LITER</span>
+                    </div>
+                    <p>Pastikan tersedia bensin dalam jumlah yang cukup di dalam tangki. Sebelum mengisi bensin, matikan mesin dan pastikan tidak orang yang duduk di atas sepeda motor. Kapasitas Tangki Bahan Bakar adalah <strong>10.4 Liter</strong>.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>4.c. Catalytic Converter</h3>
+                        <span class="badge">EXHAUST</span>
+                    </div>
+                    <p>Terpasang pada sistem knalpot untuk mengurangi emisi gas buang berbahaya.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>4.d. Jok</h3>
+                        <span class="badge">SEAT</span>
+                    </div>
+                    <p>Dilepas dengan memutar kunci jok searah jarum jam sambil mengangkat bagian belakang jok. Untuk memasangnya kembali, masukkan pengait bagian depan jok kedudukannya lalu tekan bagian belakang hingga terkunci.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>4.e. Gantungan Helm</h3>
+                        <span class="badge warn">HELMET HOLDER</span>
+                    </div>
+                    <p>Terletak di balik Jok Pengendara. Jangan Kendarai Sepeda Motor Jika Helm masih tergantung di gantungannya karena helm dapat menabrak objek sehingga mengakibatkan hilang kendali atau bahkan kecelakaan.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>4.f. Standar Samping</h3>
+                        <span class="badge warn">SIDESTAND</span>
+                    </div>
+                    <p>Terletak di sisi kiri rangka dan dioperasikan menggunakan kaki saat motor ditahan tegak. Motor dilarang dikendarai saat standar samping masih turun karena berisiko menyentuh jalan dan menyebabkan hilangnya kendali.</p>
+                </div>
+
+                <div class="card full-span">
+                    <div class="card-header">
+                        <h3>4.g. Sistem Pemutus Sirkuit Starter</h3>
+                        <span class="badge warn">CUT-OFF SYSTEM</span>
+                    </div>
+                    <p>Mencegah mesin menyala saat transmisi masuk gigi kecuali tuas kopling ditarik. Sistem ini hanya mengizinkan mesin distarter dalam kondisi masuk gigi apabila standar samping sudah dinaikkan dan tuas kopling ditarik penuh.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULATOR MULTIFUNCTION DISPLAY (BAGIAN BAWAH) -->
+        <section class="simulator-section">
+            <h2 class="section-title">Simulator Multifunction Display</h2>
+            <div class="meter-sim">
+                <div class="meter-top-bar">
+                    <h3>UJI COBA URUTAN LAYAR PANEL METER (SELECT &amp; RESET)</h3>
+                    <div class="meter-controls">
+                        <button class="sim-btn" onclick="cycleMode(1)">SELECT &gt;</button>
+                        <button class="sim-btn" onclick="cycleMode(-1)">&lt; RESET</button>
+                    </div>
+                </div>
+                <div class="meter-screen">
+                    <div class="meter-readout" id="sim-title">ODO: 012450 km</div>
+                    <div class="meter-desc" id="sim-desc">Odometer (ODO): Mencatat total jarak tempuh kendaraan dan akan terkunci di angka 999.999 (tidak dapat di-reset).</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><span>MY RETRO by Vizmind Motorcycle</span> &bull; Panduan Digital berdasarkan Manual Book Resmi Yamaha XSR 155</p>
+    </footer>
+
+    <script>
+        // Filter Kategori Navigasi
+        function filterSection(category, btnElement) {
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            const sections = document.querySelectorAll('.section-block');
+            sections.forEach(sec => {
+                if (category === 'all' || sec.getAttribute('data-category') === category) {
+                    sec.classList.remove('hidden');
+                } else {
+                    sec.classList.add('hidden');
+                }
+            });
+        }
+
+        // Simulator Tombol SELECT (maju) & RESET (mundur) sesuai urutan menu 2.f.1 - 2.f.8
+        const meterModes = [
+            {
+                title: "ODO: 012450 km",
+                desc: "2.f.1. Odometer (ODO): Mencatat total jarak tempuh kendaraan dan akan terkunci di angka 999.999 (tidak dapat di-reset)."
+            },
+            {
+                title: "TRIP 1: 142.8 km",
+                desc: "2.f.2. Tripmeter 1 (TRIP 1): Mengukur jarak tempuh sejak terakhir kali di-reset, dan akan kembali menghitung dari awal setelah mencapai 9.999,9."
+            },
+            {
+                title: "TRIP 2: 045.2 km",
+                desc: "2.f.2. Tripmeter 2 (TRIP 2): Mengukur jarak tempuh sejak terakhir kali di-reset, dan akan kembali menghitung dari awal setelah mencapai 9.999,9."
+            },
+            {
+                title: "TRIP F: 003.4 km",
+                desc: "2.f.3. Fuel Reserve Tripmeter (TRIP F): Muncul otomatis saat segmen bensin terakhir berkedip untuk menghitung jarak tempuh menggunakan bensin cadangan (otomatis hilang setelah isi ulang dan jalan 5 km)."
+            },
+            {
+                title: "CLOCK: 10:45",
+                desc: "2.f.4. Jam: Menggunakan format waktu 12 jam yang diatur melalui kombinasi tombol 'SELECT' dan 'RESET'."
+            },
+            {
+                title: "INSTANT: 42.5 km/L",
+                desc: "2.f.5. Konsumsi Bahan Bakar Seketika: Menampilkan konsumsi bensin secara real-time dalam satuan 'km/L' atau 'L/100 km' (menampilkan '_ .' jika kecepatan di bawah 10 km/jam)."
+            },
+            {
+                title: "AVE FUEL: 44.1 km/L",
+                desc: "2.f.6. Konsumsi Bahan Bakar Rata-rata: Menampilkan rata-rata konsumsi bensin ('AVE_ . km/L' atau 'AVE_ . L/100 km') sejak terakhir kali di-reset."
+            },
+            {
+                title: "AVE SPEED: 48 km/h",
+                desc: "2.f.7. Kecepatan Rata-rata: Menampilkan kecepatan rata-rata perjalanan ('AVE_ . km/h') sejak terakhir kali di-reset."
+            },
+            {
+                title: "BACKLIGHT: bL-03",
+                desc: "2.f.8. Pengaturan Kecerahan Layar: Menyediakan tiga tingkat kecerahan layar ('bL-01', 'bL-02', atau 'bL-03') yang hanya boleh diubah saat motor berhenti total."
+            }
+        ];
+
+        let currentModeIndex = 0;
+
+        function cycleMode(direction) {
+            currentModeIndex = (currentModeIndex + direction + meterModes.length) % meterModes.length;
+            document.getElementById('sim-title').textContent = meterModes[currentModeIndex].title;
+            document.getElementById('sim-desc').textContent = meterModes[currentModeIndex].desc;
+        }
+    </script>
+</body>
+</html>

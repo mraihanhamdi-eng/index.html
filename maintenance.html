@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY RETRO by Vizmind Motorcycle - Penyetelan & Perawatan Berkala Yamaha XSR 155</title>
+    <!-- Google Fonts: Oswald (Maskulin/Industrial) & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0A0A0A;
+            --bg-card: #141414;
+            --bg-card-hover: #1D1D1D;
+            --text-white: #FFFFFF;
+            --text-gray: #B3B3B3;
+            --accent-yellow: #FFD100;
+            --accent-yellow-dim: rgba(255, 209, 0, 0.12);
+            --danger-red: #FF3B30;
+            --border-color: #2A2A2A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.55;
+            overflow-x: hidden;
+        }
+
+        /* Typography Maskulin */
+        h1, h2, h3, .badge, .nav-btn {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* Header / Hero Section */
+        header {
+            border-bottom: 3px solid var(--accent-yellow);
+            background: linear-gradient(135deg, #111111 0%, #050505 100%);
+            padding: 1.5rem 1rem;
+            position: relative;
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .tag-line {
+            display: inline-block;
+            background-color: var(--accent-yellow);
+            color: #000000;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            padding: 0.2rem 0.7rem;
+            font-size: 0.78rem;
+            margin-bottom: 0.6rem;
+            clip-path: polygon(0 0, 100% 0, 96% 100%, 0% 100%);
+        }
+
+        header h1 {
+            font-size: clamp(1.75rem, 5vw, 3.4rem);
+            line-height: 1.05;
+            color: var(--text-white);
+            margin-bottom: 0.45rem;
+        }
+
+        header h1 span {
+            display: block;
+            color: var(--accent-yellow);
+        }
+
+        header p {
+            color: var(--text-gray);
+            max-width: 720px;
+            font-size: 0.88rem;
+        }
+
+        /* Navigation Filter Tabs (Padat & Hemat Tempat) */
+        nav {
+            background-color: #111111;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: transparent;
+            color: var(--text-white);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.75rem;
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background-color: var(--accent-yellow);
+            color: #000000;
+            border-color: var(--accent-yellow);
+            font-weight: 700;
+        }
+
+        @media (max-width: 640px) {
+            .nav-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.35rem;
+            }
+            .nav-btn.btn-all {
+                grid-column: 1 / -1;
+            }
+            .nav-btn {
+                padding: 0.38rem 0.45rem;
+                font-size: 0.78rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1100px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-block {
+            margin-bottom: 2.25rem;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.45rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-yellow);
+            padding-left: 0.7rem;
+        }
+
+        /* Grid Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 0.9rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.15rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-yellow);
+            background-color: var(--bg-card-hover);
+        }
+
+        .card.full-span {
+            grid-column: 1 / -1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.55rem;
+            gap: 0.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            color: var(--text-white);
+            line-height: 1.25;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            padding: 0.18rem 0.45rem;
+            background: var(--accent-yellow-dim);
+            color: var(--accent-yellow);
+            border: 1px solid var(--accent-yellow);
+            white-space: nowrap;
+        }
+
+        .badge.warn {
+            background: rgba(255, 59, 48, 0.15);
+            color: var(--danger-red);
+            border-color: var(--danger-red);
+        }
+
+        .card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .card strong {
+            color: var(--text-white);
+        }
+
+        .spec-highlight {
+            margin-top: 0.65rem;
+            padding-top: 0.55rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--accent-yellow);
+            font-weight: 600;
+        }
+
+        /* Interactive Service Checklist & Spec Finder (Bagian Bawah) */
+        .tool-section {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .garage-box {
+            background: #121212;
+            border: 2px solid var(--accent-yellow);
+            padding: 1.35rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .garage-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        .garage-top h3 {
+            color: var(--accent-yellow);
+            font-size: 1.25rem;
+        }
+
+        .km-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .km-btn {
+            background-color: var(--text-white);
+            color: #000;
+            border: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.45rem 0.9rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.2s ease;
+        }
+
+        .km-btn:hover, .km-btn.active-km {
+            background-color: var(--accent-yellow);
+        }
+
+        .garage-screen {
+            background: #000000;
+            border: 1px solid #333;
+            padding: 1.15rem;
+        }
+
+        .garage-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.45rem;
+            color: var(--accent-yellow);
+            margin-bottom: 0.4rem;
+        }
+
+        .garage-list {
+            list-style: none;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .garage-list li::before {
+            content: "▪ ";
+            color: var(--accent-yellow);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.82rem;
+            margin-top: 2.5rem;
+        }
+
+        footer span {
+            color: var(--accent-yellow);
+            font-weight: 700;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="tag-line">MY RETRO by Vizmind Motorcycle</div>
+            <h1>PENYETELAN &amp; PERAWATAN BERKALA <span>YAMAHA XSR 155</span></h1>
+            <p>Rangkuman Teknis Halaman 7-8 s/d 7-35 berdasarkan Manual Book Resmi Yamaha XSR 155</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <button class="nav-btn btn-all active" onclick="filterSection('all', this)">Semua Bagian (7-8 – 7-35)</button>
+            <button class="nav-btn" onclick="filterSection('mesin', this)">1. Mesin, Oli &amp; Filter</button>
+            <button class="nav-btn" onclick="filterSection('kaki', this)">2. Ban, Rem &amp; Rantai</button>
+            <button class="nav-btn" onclick="filterSection('pelumasan', this)">3. Kabel, Tuas &amp; Pelumasan</button>
+            <button class="nav-btn" onclick="filterSection('sasis', this)">4. Suspensi, Aki &amp; Roda</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- BAGIAN 1: MESIN, OLI, PENDINGIN & FILTER -->
+        <section class="section-block" data-category="mesin">
+            <h2 class="section-title">1. Mesin, Oli, Pendingin &amp; Filter (Hal. 7-8 – 7-16)</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Melepas &amp; Memasang Bodi</h3>
+                        <span class="badge">HAL. 7-8</span>
+                    </div>
+                    <p><em>(Removing and installing cowlings)</em> Panduan melepas panel bodi motor yang diperlukan sebagai akses untuk melakukan berbagai pekerjaan perawatan rutin.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Memeriksa Busi</h3>
+                        <span class="badge">HAL. 7-8</span>
+                    </div>
+                    <p><em>(Checking the spark plug)</em> Pemeriksaan kondisi elektroda busi serta penyesuaian celahnya secara berkala untuk memastikan pembakaran mesin tetap optimal.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Kanister (Canister)</h3>
+                        <span class="badge">HAL. 7-10</span>
+                    </div>
+                    <p>Komponen pada sistem kontrol emisi penguapan bahan bakar yang perlu diperiksa kerusakannya secara berkala.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Oli Mesin &amp; Elemen Filter Oli</h3>
+                        <span class="badge">HAL. 7-10</span>
+                    </div>
+                    <p><em>(Engine oil and oil filter element)</em> Penggantian oli mesin serta filter oli secara berkala untuk menjaga pelumasan komponen internal.</p>
+                    <div class="spec-highlight">Kapasitas: 0,85 L (tanpa filter) / 0,95 L (dengan filter) &bull; Torsi Baut: 32 N·m (Drain) / 10 N·m (Filter)</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Mengapa Yamalube</h3>
+                        <span class="badge">HAL. 7-13</span>
+                    </div>
+                    <p><em>(Why Yamalube)</em> Penjelasan mengenai formulasi oli asli Yamaha yang dikembangkan secara khusus untuk memaksimalkan performa dan keawetan mesin.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Cairan Pendingin (Coolant)</h3>
+                        <span class="badge warn">HAL. 7-13</span>
+                    </div>
+                    <p>Pemeriksaan level cairan pendingin dan jadwal penggantiannya di bengkel resmi Yamaha. <strong>Dilarang membuka tutup radiator saat mesin masih panas.</strong></p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Elemen Filter Udara &amp; Selang Cek</h3>
+                        <span class="badge">HAL. 7-14</span>
+                    </div>
+                    <p><em>(Air filter element and check hose)</em> Pembersihan atau penggantian filter udara (lebih sering jika berkendara di area berdebu/basah) serta pembersihan selang pembuangannya.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Menyetel Putaran Stasioner Mesin</h3>
+                        <span class="badge">HAL. 7-15</span>
+                    </div>
+                    <p><em>(Adjusting the engine idling speed)</em> Pengaturan putaran stasioner (idling) mesin menggunakan sekrup penyetel agar berada di rentang ideal.</p>
+                    <div class="spec-highlight">Standar Idling: 1.300 – 1.500 r/min</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Jarak Main Bebas Gas &amp; Celah Katup</h3>
+                        <span class="badge">HAL. 7-16</span>
+                    </div>
+                    <p>Penyetelan jarak main bebas putaran gas via mur penyetel serta pemeriksaan celah katup (dalam kondisi mesin dingin di dealer Yamaha).</p>
+                    <div class="spec-highlight">Free Play Gas: 3,0 – 5,0 mm</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN 2: BAN, PELEK, REM & RANTAI RODA -->
+        <section class="section-block" data-category="kaki">
+            <h2 class="section-title">2. Ban, Pelek, Rem &amp; Rantai Roda (Hal. 7-17 – 7-25)</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Ban &amp; Pelek Cast Wheel</h3>
+                        <span class="badge warn">HAL. 7-17 – 7-18</span>
+                    </div>
+                    <p><em>(Tires &amp; Cast wheels)</em> Pemeriksaan tekanan angin, kedalaman alur ban, kerusakan fisik, serta keolengan (runout) pelek karena sangat krusial bagi keselamatan berkendara.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Jarak Main Bebas Tuas Kopling</h3>
+                        <span class="badge">HAL. 7-19</span>
+                    </div>
+                    <p><em>(Adjusting the clutch lever free play)</em> Pemeriksaan dan penyetelan jarak bebas tuas kopling agar perpindahan gigi tetap halus.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Jarak Bebas Tuas Rem &amp; Sakelar Lampu</h3>
+                        <span class="badge">HAL. 7-20</span>
+                    </div>
+                    <p><em>(Brake lever free play &amp; Brake light switches)</em> Pengecekan respons tuas rem serta fungsi sakelar rem depan dan belakang agar lampu rem menyala tepat waktu.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Memeriksa Kampas Rem Depan &amp; Belakang</h3>
+                        <span class="badge">HAL. 7-21</span>
+                    </div>
+                    <p><em>(Checking the

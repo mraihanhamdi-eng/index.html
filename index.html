@@ -255,10 +255,10 @@
             color: var(--text-gray);
         }
 
-        /* Interactive Speedo Simulator Box (Bagian Bawah) */
-        .simulator-section {
-            margin-top: 4rem;
-            padding-top: 2.5rem;
+        /* Interactive Speedo Simulator Box (Khusus Tab 2 Bagian Bawah) */
+        .simulator-box {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
             border-top: 1px solid var(--border-color);
         }
 
@@ -346,7 +346,7 @@
         }
 
         .hidden {
-            display: none;
+            display: none !important;
         }
     </style>
 </head>
@@ -525,6 +525,24 @@
                     </div>
                 </div>
             </div>
+
+            <!-- SIMULATOR MULTIFUNCTION DISPLAY (KHUSUS MUNCUL DI TAB 2) -->
+            <div id="mfd-simulator" class="simulator-box hidden">
+                <h2 class="section-title">Simulator Multifunction Display</h2>
+                <div class="meter-sim">
+                    <div class="meter-top-bar">
+                        <h3>UJI COBA URUTAN LAYAR PANEL METER (SELECT &amp; RESET)</h3>
+                        <div class="meter-controls">
+                            <button class="sim-btn" onclick="cycleMode(1)">SELECT &gt;</button>
+                            <button class="sim-btn" onclick="cycleMode(-1)">&lt; RESET</button>
+                        </div>
+                    </div>
+                    <div class="meter-screen">
+                        <div class="meter-readout" id="sim-title">ODO: 012450 km</div>
+                        <div class="meter-desc" id="sim-desc">2.f.1. Odometer (ODO): Mencatat total jarak tempuh kendaraan dan akan terkunci di angka 999.999 (tidak dapat di-reset).</div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- BAGIAN 3: KONTROL KEMUDI, TUAS, & PEDAL -->
@@ -634,24 +652,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- SIMULATOR MULTIFUNCTION DISPLAY (BAGIAN BAWAH) -->
-        <section class="simulator-section">
-            <h2 class="section-title">Simulator Multifunction Display</h2>
-            <div class="meter-sim">
-                <div class="meter-top-bar">
-                    <h3>UJI COBA URUTAN LAYAR PANEL METER (SELECT &amp; RESET)</h3>
-                    <div class="meter-controls">
-                        <button class="sim-btn" onclick="cycleMode(1)">SELECT &gt;</button>
-                        <button class="sim-btn" onclick="cycleMode(-1)">&lt; RESET</button>
-                    </div>
-                </div>
-                <div class="meter-screen">
-                    <div class="meter-readout" id="sim-title">ODO: 012450 km</div>
-                    <div class="meter-desc" id="sim-desc">Odometer (ODO): Mencatat total jarak tempuh kendaraan dan akan terkunci di angka 999.999 (tidak dapat di-reset).</div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
@@ -673,6 +673,14 @@
                     sec.classList.add('hidden');
                 }
             });
+
+            // Tampilkan Simulator HANYA saat tab "2. Panel Meter Multi-Fungsi" ('panel') aktif
+            const simulator = document.getElementById('mfd-simulator');
+            if (category === 'panel') {
+                simulator.classList.remove('hidden');
+            } else {
+                simulator.classList.add('hidden');
+            }
         }
 
         // Simulator Tombol SELECT (maju) & RESET (mundur) sesuai urutan menu 2.f.1 - 2.f.8

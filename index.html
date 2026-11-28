@@ -42,7 +42,7 @@
             letter-spacing: 0.04em;
         }
 
-        /* Header / Hero Section (Lebih Padat) */
+        /* Header / Hero Section (Padat) */
         header {
             border-bottom: 3px solid var(--accent-yellow);
             background: linear-gradient(135deg, #111111 0%, #050505 100%);
@@ -269,7 +269,7 @@
             color: var(--text-gray);
         }
 
-        /* Interactive Speedo Simulator Box (Khusus Tab 2 Bagian Bawah) */
+        /* Interactive Speedo Simulator Box (Khusus Tab 3 Bagian Bawah) */
         .simulator-box {
             margin-top: 2rem;
             padding-top: 1.5rem;
@@ -377,17 +377,18 @@
     <nav>
         <div class="nav-container">
             <button class="nav-btn btn-all active" onclick="filterSection('all', this)">Semua Bagian</button>
-            <button class="nav-btn" onclick="filterSection('indikator', this)">1. Kunci &amp; Indikator</button>
-            <button class="nav-btn" onclick="filterSection('panel', this)">2. Panel Meter</button>
-            <button class="nav-btn" onclick="filterSection('kontrol', this)">3. Kemudi &amp; Pedal</button>
-            <button class="nav-btn" onclick="filterSection('fitur', this)">4. Fitur &amp; Keamanan</button>
+            <button class="nav-btn" onclick="filterSection('kunci', this)">1. Kunci Kontak</button>
+            <button class="nav-btn" onclick="filterSection('indikator', this)">2. Lampu Indikator</button>
+            <button class="nav-btn" onclick="filterSection('panel', this)">3. Panel Meter</button>
+            <button class="nav-btn" onclick="filterSection('kontrol', this)">4. Kemudi &amp; Pedal</button>
+            <button class="nav-btn" onclick="filterSection('fitur', this)">5. Fitur &amp; Keamanan</button>
         </div>
     </nav>
 
     <main>
-        <!-- BAGIAN 1: KUNCI KONTAK & LAMPU INDIKATOR -->
-        <section class="section-block" data-category="indikator">
-            <h2 class="section-title">1. Kunci Kontak &amp; Lampu Indikator</h2>
+        <!-- BAGIAN 1: KUNCI KONTAK -->
+        <section class="section-block" data-category="kunci">
+            <h2 class="section-title">1. Kunci Kontak</h2>
             <div class="grid">
                 <div class="card full-span">
                     <div class="card-header">
@@ -401,10 +402,16 @@
                         <div class="key-state-item"><span>LOCK:</span> Kemudi terputus dan seluruh sistem kelistrikan terputus. Kunci Kontak dapat dicabut.</div>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <!-- BAGIAN 2: LAMPU INDIKATOR -->
+        <section class="section-block" data-category="indikator">
+            <h2 class="section-title">2. Lampu Indikator</h2>
+            <div class="grid">
                 <div class="card">
                     <div class="card-header">
-                        <h3>1.b. Lampu Indikator Sein</h3>
+                        <h3>2.a. Lampu Indikator Sein</h3>
                         <span class="badge">TURN SIGNAL</span>
                     </div>
                     <p><em>(Turn signal indicator lights)</em> Berkedip mengikuti lampu sein kiri atau kanan yang sedang diaktifkan.</p>
@@ -412,7 +419,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>1.c. Lampu Indikator Netral</h3>
+                        <h3>2.b. Lampu Indikator Netral</h3>
                         <span class="badge">NEUTRAL</span>
                     </div>
                     <p><em>(Neutral indicator light)</em> Menyala saat posisi transmisi berada di gigi netral.</p>
@@ -420,7 +427,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>1.d. Lampu Indikator Lampu Jauh</h3>
+                        <h3>2.c. Lampu Indikator Lampu Jauh</h3>
                         <span class="badge">HIGH BEAM</span>
                     </div>
                     <p><em>(High beam indicator light)</em> Menyala ketika lampu jauh (high beam) pada lampu utama diaktifkan.</p>
@@ -428,7 +435,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>1.e. Lampu Peringatan Suhu Cairan Pendingin</h3>
+                        <h3>2.d. Lampu Peringatan Suhu Cairan Pendingin</h3>
                         <span class="badge warn">COOLANT TEMP</span>
                     </div>
                     <p><em>(Coolant temperature warning light)</em> Menyala jika mesin mengalami overheating, sehingga mesin harus segera dimatikan dan dibiarkan dingin. Lampu ini juga menyala selama beberapa detik saat kontak pertama kali diputar ke posisi on sebagai pengecekan fungsi.</p>
@@ -436,7 +443,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>1.f. Lampu Peringatan Gangguan Mesin</h3>
+                        <h3>2.e. Lampu Peringatan Gangguan Mesin</h3>
                         <span class="badge warn">ENGINE TROUBLE</span>
                     </div>
                     <p><em>(Engine trouble warning light)</em> Menyala apabila terdeteksi masalah pada mesin atau sistem kontrol kendaraan lainnya. Lampu ini turut menyala sesaat ketika kendaraan baru dihidupkan.</p>
@@ -444,13 +451,13 @@
             </div>
         </section>
 
-        <!-- BAGIAN 2: PANEL METER MULTI-FUNGSI -->
+        <!-- BAGIAN 3: PANEL METER MULTI-FUNGSI -->
         <section class="section-block" data-category="panel">
-            <h2 class="section-title">2. Panel Meter Multi-Fungsi</h2>
+            <h2 class="section-title">3. Panel Meter Multi-Fungsi</h2>
             <div class="grid">
                 <div class="card">
                     <div class="card-header">
-                        <h3>2.a. Speedometer</h3>
+                        <h3>3.a. Speedometer</h3>
                         <span class="badge">SPEED</span>
                     </div>
                     <p>Menampilkan kecepatan laju kendaraan saat berkendara.</p>
@@ -458,7 +465,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>2.b. Tachometer</h3>
+                        <h3>3.b. Tachometer</h3>
                         <span class="badge warn">RED ZONE 11K+</span>
                     </div>
                     <p>Memantau putaran mesin (r/min) agar tetap berada di rentang tenaga ideal. Mesin tidak boleh dioperasikan pada zona merah (red zone) yang dimulai dari 11.000 r/min ke atas.</p>
@@ -466,7 +473,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>2.c. Meter Bahan Bakar</h3>
+                        <h3>3.c. Meter Bahan Bakar</h3>
                         <span class="badge">FUEL METER</span>
                     </div>
                     <p>Menunjukkan sisa volume bensin dari posisi "F" (penuh) menuju "E" (kosong). Segmen terakhir akan berkedip saat sisa bahan bakar mencapai sekitar 1,8 liter sebagai tanda untuk segera mengisi ulang.</p>
@@ -474,7 +481,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>2.d. Indikator VVA</h3>
+                        <h3>3.d. Indikator VVA</h3>
                         <span class="badge">VVA SYSTEM</span>
                     </div>
                     <p><em>(Variable Valve Actuation)</em> Menyala saat sistem katup variabel beralih ke rentang kecepatan tinggi untuk menjaga efisiensi bahan bakar dan akselerasi.</p>
@@ -482,65 +489,65 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>2.e. Indikator Posisi Gigi</h3>
+                        <h3>3.e. Indikator Posisi Gigi</h3>
                         <span class="badge">GEAR DISPLAY</span>
                     </div>
                     <p>Menampilkan posisi gigi transmisi yang sedang aktif.</p>
                 </div>
 
-                <!-- 2.f Multi-Function Display -->
+                <!-- 3.f Multi-Function Display -->
                 <div class="card full-span">
                     <div class="card-header">
-                        <h3>2.f. Multi-Function Display</h3>
+                        <h3>3.f. Multi-Function Display</h3>
                         <span class="badge">SELECT &amp; RESET</span>
                     </div>
                     <p>Dioperasikan menggunakan tombol <strong>"SELECT"</strong> (untuk mengganti tampilan) dan tombol <strong>"RESET"</strong> (untuk urutan sebaliknya atau mengatur ulang data) dengan pilihan menu berikut:</p>
 
                     <div class="mfd-subgrid">
                         <div class="mfd-item">
-                            <h4>2.f.1. Odometer (ODO)</h4>
+                            <h4>3.f.1. Odometer (ODO)</h4>
                             <p>Mencatat total jarak tempuh kendaraan dan akan terkunci di angka 999.999 (tidak dapat di-reset).</p>
                         </div>
 
                         <div class="mfd-item">
-                            <h4>2.f.2. Tripmeter (TRIP 1 &amp; TRIP 2)</h4>
+                            <h4>3.f.2. Tripmeter (TRIP 1 &amp; TRIP 2)</h4>
                             <p>Mengukur jarak tempuh sejak terakhir kali di-reset, dan akan kembali menghitung dari awal setelah mencapai 9.999,9.</p>
                         </div>
 
                         <div class="mfd-item">
-                            <h4>2.f.3. Fuel Reserve Tripmeter (TRIP F)</h4>
+                            <h4>3.f.3. Fuel Reserve Tripmeter (TRIP F)</h4>
                             <p>Muncul otomatis saat segmen bensin terakhir berkedip untuk menghitung jarak tempuh menggunakan bensin cadangan. Mode ini dapat di-reset secara manual atau otomatis hilang setelah mengisi ulang bensin dan menempuh jarak 5 km.</p>
                         </div>
 
                         <div class="mfd-item">
-                            <h4>2.f.4. Jam (Clock)</h4>
+                            <h4>3.f.4. Jam (Clock)</h4>
                             <p>Menggunakan format waktu 12 jam yang diatur melalui kombinasi tombol "SELECT" dan "RESET".</p>
                         </div>
 
                         <div class="mfd-item">
-                            <h4>2.f.5. Konsumsi Bahan Bakar Seketika</h4>
+                            <h4>3.f.5. Konsumsi Bahan Bakar Seketika</h4>
                             <p>Menampilkan konsumsi bensin secara real-time dalam satuan "km/L" atau "L/100 km" (menampilkan "_ ." jika kecepatan di bawah 10 km/jam).</p>
                         </div>
 
                         <div class="mfd-item">
-                            <h4>2.f.6. Konsumsi Bahan Bakar Rata-rata</h4>
+                            <h4>3.f.6. Konsumsi Bahan Bakar Rata-rata</h4>
                             <p>Menampilkan rata-rata konsumsi bensin ("AVE_ . km/L" atau "AVE_ . L/100 km") sejak terakhir kali di-reset.</p>
                         </div>
 
                         <div class="mfd-item">
-                            <h4>2.f.7. Kecepatan Rata-rata</h4>
+                            <h4>3.f.7. Kecepatan Rata-rata</h4>
                             <p>Menampilkan kecepatan rata-rata perjalanan ("AVE_ . km/h") sejak terakhir kali di-reset.</p>
                         </div>
 
                         <div class="mfd-item">
-                            <h4>2.f.8. Pengaturan Kecerahan Layar</h4>
+                            <h4>3.f.8. Pengaturan Kecerahan Layar</h4>
                             <p>Menyediakan tiga tingkat kecerahan layar ("bL-01", "bL-02", atau "bL-03") yang hanya boleh diubah saat motor berhenti total.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SIMULATOR MULTIFUNCTION DISPLAY (KHUSUS MUNCUL DI TAB 2) -->
+            <!-- SIMULATOR MULTIFUNCTION DISPLAY (KHUSUS MUNCUL DI TAB 3) -->
             <div id="mfd-simulator" class="simulator-box hidden">
                 <h2 class="section-title">Simulator Multifunction Display</h2>
                 <div class="meter-sim">
@@ -553,19 +560,19 @@
                     </div>
                     <div class="meter-screen">
                         <div class="meter-readout" id="sim-title">ODO: 012450 km</div>
-                        <div class="meter-desc" id="sim-desc">2.f.1. Odometer (ODO): Mencatat total jarak tempuh kendaraan dan akan terkunci di angka 999.999 (tidak dapat di-reset).</div>
+                        <div class="meter-desc" id="sim-desc">3.f.1. Odometer (ODO): Mencatat total jarak tempuh kendaraan dan akan terkunci di angka 999.999 (tidak dapat di-reset).</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- BAGIAN 3: KONTROL KEMUDI, TUAS, & PEDAL -->
+        <!-- BAGIAN 4: KONTROL KEMUDI, TUAS, & PEDAL -->
         <section class="section-block" data-category="kontrol">
-            <h2 class="section-title">3. Kontrol Kemudi, Tuas, &amp; Pedal</h2>
+            <h2 class="section-title">4. Kontrol Kemudi, Tuas, &amp; Pedal</h2>
             <div class="grid">
                 <div class="card">
                     <div class="card-header">
-                        <h3>3.a. Sakelar Setang Kemudi</h3>
+                        <h3>4.a. Sakelar Setang Kemudi</h3>
                         <span class="badge">HANDLEBAR</span>
                     </div>
                     <p>Terdiri dari sakelar setang kiri (mencakup sakelar dimmer/pass dan tombol klakson) serta sakelar setang kanan (mencakup sakelar start/engine stop yang harus berada di posisi run untuk menyalakan mesin).</p>
@@ -573,7 +580,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>3.b. Tuas Kopling</h3>
+                        <h3>4.b. Tuas Kopling</h3>
                         <span class="badge">CLUTCH LEVER</span>
                     </div>
                     <p>Terletak di setang kiri; tarik ke arah grip untuk memutus kopling dan lepaskan perlahan untuk penyaluran tenaga yang halus. Tuas ini juga dilengkapi clutch switch yang terhubung dengan sistem keamanan starter.</p>
@@ -581,7 +588,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>3.c. Pedal Pemindah Gigi</h3>
+                        <h3>4.c. Pedal Pemindah Gigi</h3>
                         <span class="badge">SHIFT PEDAL</span>
                     </div>
                     <p>Berada di sisi kiri bawah motor; cungkil ke atas untuk menaikkan gigi dan tekan ke bawah untuk menurunkan gigi.</p>
@@ -589,7 +596,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>3.d. Tuas Rem Depan</h3>
+                        <h3>4.d. Tuas Rem Depan</h3>
                         <span class="badge">FRONT BRAKE</span>
                     </div>
                     <p>Terletak di stang kanan dan ditarik ke arah selongsong gas (throttle grip) untuk mengaktifkan rem depan.</p>
@@ -597,7 +604,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>3.e. Pedal Rem Belakang</h3>
+                        <h3>4.e. Pedal Rem Belakang</h3>
                         <span class="badge">REAR BRAKE</span>
                     </div>
                     <p>Berada di sisi kanan bawah motor dan ditekan ke bawah untuk mengaktifkan rem belakang.</p>
@@ -605,13 +612,13 @@
             </div>
         </section>
 
-        <!-- BAGIAN 4: FITUR PENDUKUNG & SISTEM KEAMANAN -->
+        <!-- BAGIAN 5: FITUR PENDUKUNG & SISTEM KEAMANAN -->
         <section class="section-block" data-category="fitur">
-            <h2 class="section-title">4. Fitur Pendukung &amp; Sistem Keamanan</h2>
+            <h2 class="section-title">5. Fitur Pendukung &amp; Sistem Keamanan</h2>
             <div class="grid">
                 <div class="card">
                     <div class="card-header">
-                        <h3>4.a. Tutup Tangki Bahan Bakar</h3>
+                        <h3>5.a. Tutup Tangki Bahan Bakar</h3>
                         <span class="badge">FUEL CAP</span>
                     </div>
                     <p>Dibuka dengan mengangkat penutup lubang kunci, memasukkan kunci, lalu memutarnya 1/4 putaran searah jarum jam.</p>
@@ -619,7 +626,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>4.b. Bahan Bakar</h3>
+                        <h3>5.b. Bahan Bakar</h3>
                         <span class="badge">10.4 LITER</span>
                     </div>
                     <p>Pastikan tersedia bensin dalam jumlah yang cukup di dalam tangki. Sebelum mengisi bensin, matikan mesin dan pastikan tidak orang yang duduk di atas sepeda motor. Kapasitas Tangki Bahan Bakar adalah <strong>10.4 Liter</strong>.</p>
@@ -627,7 +634,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>4.c. Catalytic Converter</h3>
+                        <h3>5.c. Catalytic Converter</h3>
                         <span class="badge">EXHAUST</span>
                     </div>
                     <p>Terpasang pada sistem knalpot untuk mengurangi emisi gas buang berbahaya.</p>
@@ -635,7 +642,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>4.d. Jok</h3>
+                        <h3>5.d. Jok</h3>
                         <span class="badge">SEAT</span>
                     </div>
                     <p>Dilepas dengan memutar kunci jok searah jarum jam sambil mengangkat bagian belakang jok. Untuk memasangnya kembali, masukkan pengait bagian depan jok kedudukannya lalu tekan bagian belakang hingga terkunci.</p>
@@ -643,7 +650,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>4.e. Gantungan Helm</h3>
+                        <h3>5.e. Gantungan Helm</h3>
                         <span class="badge warn">HELMET HOLDER</span>
                     </div>
                     <p>Terletak di balik Jok Pengendara. Jangan Kendarai Sepeda Motor Jika Helm masih tergantung di gantungannya karena helm dapat menabrak objek sehingga mengakibatkan hilang kendali atau bahkan kecelakaan.</p>
@@ -651,7 +658,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>4.f. Standar Samping</h3>
+                        <h3>5.f. Standar Samping</h3>
                         <span class="badge warn">SIDESTAND</span>
                     </div>
                     <p>Terletak di sisi kiri rangka dan dioperasikan menggunakan kaki saat motor ditahan tegak. Motor dilarang dikendarai saat standar samping masih turun karena berisiko menyentuh jalan dan menyebabkan hilangnya kendali.</p>
@@ -659,7 +666,7 @@
 
                 <div class="card full-span">
                     <div class="card-header">
-                        <h3>4.g. Sistem Pemutus Sirkuit Starter</h3>
+                        <h3>5.g. Sistem Pemutus Sirkuit Starter</h3>
                         <span class="badge warn">CUT-OFF SYSTEM</span>
                     </div>
                     <p>Mencegah mesin menyala saat transmisi masuk gigi kecuali tuas kopling ditarik. Sistem ini hanya mengizinkan mesin distarter dalam kondisi masuk gigi apabila standar samping sudah dinaikkan dan tuas kopling ditarik penuh.</p>
@@ -688,7 +695,7 @@
                 }
             });
 
-            // Tampilkan Simulator HANYA saat tab "2. Panel Meter" ('panel') aktif
+            // Tampilkan Simulator HANYA saat tab "3. Panel Meter" ('panel') aktif
             const simulator = document.getElementById('mfd-simulator');
             if (category === 'panel') {
                 simulator.classList.remove('hidden');
@@ -697,43 +704,43 @@
             }
         }
 
-        // Simulator Tombol SELECT (maju) & RESET (mundur) sesuai urutan menu 2.f.1 - 2.f.8
+        // Simulator Tombol SELECT (maju) & RESET (mundur) sesuai urutan menu 3.f.1 - 3.f.8
         const meterModes = [
             {
                 title: "ODO: 012450 km",
-                desc: "2.f.1. Odometer (ODO): Mencatat total jarak tempuh kendaraan dan akan terkunci di angka 999.999 (tidak dapat di-reset)."
+                desc: "3.f.1. Odometer (ODO): Mencatat total jarak tempuh kendaraan dan akan terkunci di angka 999.999 (tidak dapat di-reset)."
             },
             {
                 title: "TRIP 1: 142.8 km",
-                desc: "2.f.2. Tripmeter 1 (TRIP 1): Mengukur jarak tempuh sejak terakhir kali di-reset, dan akan kembali menghitung dari awal setelah mencapai 9.999,9."
+                desc: "3.f.2. Tripmeter 1 (TRIP 1): Mengukur jarak tempuh sejak terakhir kali di-reset, dan akan kembali menghitung dari awal setelah mencapai 9.999,9."
             },
             {
                 title: "TRIP 2: 045.2 km",
-                desc: "2.f.2. Tripmeter 2 (TRIP 2): Mengukur jarak tempuh sejak terakhir kali di-reset, dan akan kembali menghitung dari awal setelah mencapai 9.999,9."
+                desc: "3.f.2. Tripmeter 2 (TRIP 2): Mengukur jarak tempuh sejak terakhir kali di-reset, dan akan kembali menghitung dari awal setelah mencapai 9.999,9."
             },
             {
                 title: "TRIP F: 003.4 km",
-                desc: "2.f.3. Fuel Reserve Tripmeter (TRIP F): Muncul otomatis saat segmen bensin terakhir berkedip untuk menghitung jarak tempuh menggunakan bensin cadangan (otomatis hilang setelah isi ulang dan jalan 5 km)."
+                desc: "3.f.3. Fuel Reserve Tripmeter (TRIP F): Muncul otomatis saat segmen bensin terakhir berkedip untuk menghitung jarak tempuh menggunakan bensin cadangan (otomatis hilang setelah isi ulang dan jalan 5 km)."
             },
             {
                 title: "CLOCK: 10:45",
-                desc: "2.f.4. Jam: Menggunakan format waktu 12 jam yang diatur melalui kombinasi tombol 'SELECT' dan 'RESET'."
+                desc: "3.f.4. Jam: Menggunakan format waktu 12 jam yang diatur melalui kombinasi tombol 'SELECT' dan 'RESET'."
             },
             {
                 title: "INSTANT: 42.5 km/L",
-                desc: "2.f.5. Konsumsi Bahan Bakar Seketika: Menampilkan konsumsi bensin secara real-time dalam satuan 'km/L' atau 'L/100 km' (menampilkan '_ .' jika kecepatan di bawah 10 km/jam)."
+                desc: "3.f.5. Konsumsi Bahan Bakar Seketika: Menampilkan konsumsi bensin secara real-time dalam satuan 'km/L' atau 'L/100 km' (menampilkan '_ .' jika kecepatan di bawah 10 km/jam)."
             },
             {
                 title: "AVE FUEL: 44.1 km/L",
-                desc: "2.f.6. Konsumsi Bahan Bakar Rata-rata: Menampilkan rata-rata konsumsi bensin ('AVE_ . km/L' atau 'AVE_ . L/100 km') sejak terakhir kali di-reset."
+                desc: "3.f.6. Konsumsi Bahan Bakar Rata-rata: Menampilkan rata-rata konsumsi bensin ('AVE_ . km/L' atau 'AVE_ . L/100 km') sejak terakhir kali di-reset."
             },
             {
                 title: "AVE SPEED: 48 km/h",
-                desc: "2.f.7. Kecepatan Rata-rata: Menampilkan kecepatan rata-rata perjalanan ('AVE_ . km/h') sejak terakhir kali di-reset."
+                desc: "3.f.7. Kecepatan Rata-rata: Menampilkan kecepatan rata-rata perjalanan ('AVE_ . km/h') sejak terakhir kali di-reset."
             },
             {
                 title: "BACKLIGHT: bL-03",
-                desc: "2.f.8. Pengaturan Kecerahan Layar: Menyediakan tiga tingkat kecerahan layar ('bL-01', 'bL-02', atau 'bL-03') yang hanya boleh diubah saat motor berhenti total."
+                desc: "3.f.8. Pengaturan Kecerahan Layar: Menyediakan tiga tingkat kecerahan layar ('bL-01', 'bL-02', atau 'bL-03') yang hanya boleh diubah saat motor berhenti total."
             }
         ];
 

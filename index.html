@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY RETRO by Vizmind Motorcycle - Instrumen & Fungsi Kontrol Yamaha XSR 155</title>
+    <title>Instrumen &amp; Fungsi Kontrol Yamaha XSR 155</title>
     <!-- Google Fonts: Oswald (Maskulin/Industrial) & Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,11 +42,11 @@
             letter-spacing: 0.04em;
         }
 
-        /* Header / Hero Section (Padat) */
+        /* Header / Hero Section */
         header {
             border-bottom: 3px solid var(--accent-yellow);
             background: linear-gradient(135deg, #111111 0%, #050505 100%);
-            padding: 1.5rem 1rem;
+            padding: 1.65rem 1rem;
             position: relative;
         }
 
@@ -55,20 +55,8 @@
             margin: 0 auto;
         }
 
-        .tag-line {
-            display: inline-block;
-            background-color: var(--accent-yellow);
-            color: #000000;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            padding: 0.2rem 0.7rem;
-            font-size: 0.78rem;
-            margin-bottom: 0.6rem;
-            clip-path: polygon(0 0, 100% 0, 96% 100%, 0% 100%);
-        }
-
         header h1 {
-            font-size: clamp(1.75rem, 5vw, 3.4rem);
+            font-size: clamp(1.85rem, 5vw, 3.5rem);
             line-height: 1.05;
             color: var(--text-white);
             margin-bottom: 0.45rem;
@@ -82,7 +70,7 @@
         header p {
             color: var(--text-gray);
             max-width: 720px;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
         }
 
         /* Navigation Filter Tabs (Padat & Hemat Tempat) */
@@ -107,7 +95,7 @@
             background: transparent;
             color: var(--text-white);
             border: 1px solid var(--border-color);
-            padding: 0.4rem 0.75rem;
+            padding: 0.4rem 0.85rem;
             font-size: 0.82rem;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -220,26 +208,57 @@
             font-size: 0.9rem;
         }
 
+        .card ul {
+            margin-top: 0.4rem;
+            padding-left: 1.15rem;
+        }
+
+        .card ul li {
+            margin-bottom: 0.35rem;
+        }
+
         .card strong {
             color: var(--text-white);
         }
 
-        .key-states {
-            margin-top: 0.65rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 0.65rem;
-            font-size: 0.9rem;
-            color: var(--text-gray);
+        /* Slot Gambar di Dalam Kartu */
+        .img-slot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.85rem;
+            margin-top: 0.5rem;
         }
 
-        .key-state-item span {
+        .img-slot-card {
+            background-color: #0D0D0D;
+            border: 1px solid #262626;
+            padding: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .img-placeholder {
+            width: 100%;
+            min-height: 140px;
+            border: 1.5px dashed var(--accent-yellow);
+            background-color: rgba(255, 209, 0, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             color: var(--accent-yellow);
             font-family: 'Oswald', sans-serif;
+            font-size: 0.95rem;
             letter-spacing: 0.05em;
-            margin-right: 0.3rem;
+            padding: 1rem;
+        }
+
+        .img-slot-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid var(--accent-yellow);
         }
 
         /* Sub-grid inside Multi-Function Display */
@@ -354,11 +373,6 @@
             margin-top: 2.5rem;
         }
 
-        footer span {
-            color: var(--accent-yellow);
-            font-weight: 700;
-        }
-
         .hidden {
             display: none !important;
         }
@@ -368,15 +382,14 @@
 
     <header>
         <div class="header-container">
-            <div class="tag-line">MY RETRO by Vizmind Motorcycle</div>
             <h1>INSTRUMEN &amp; FUNGSI KONTROL <span>YAMAHA XSR 155</span></h1>
-            <p>Panduan Digital berdasarkan Manual Book Resmi Yamaha XSR 155</p>
+            <p>Panduan Digital berdasarkan Manual Petunjuk Resmi Yamaha XSR 155</p>
         </div>
     </header>
 
     <nav>
         <div class="nav-container">
-            <button class="nav-btn btn-all active" onclick="filterSection('all', this)">Semua Bagian</button>
+            <button class="nav-btn btn-all active" onclick="filterSection('all', this)">Semua</button>
             <button class="nav-btn" onclick="filterSection('kunci', this)">1. Kunci Kontak</button>
             <button class="nav-btn" onclick="filterSection('indikator', this)">2. Lampu Indikator</button>
             <button class="nav-btn" onclick="filterSection('panel', this)">3. Panel Meter</button>
@@ -390,17 +403,46 @@
         <section class="section-block" data-category="kunci">
             <h2 class="section-title">1. Kunci Kontak</h2>
             <div class="grid">
+                <!-- 1.A. PENJELASAN -->
                 <div class="card full-span">
                     <div class="card-header">
-                        <h3>1.a. Kunci Kontak / Pengunci Setang</h3>
+                        <h3>1.A. Penjelasan</h3>
                         <span class="badge">MAIN SWITCH</span>
                     </div>
-                    <p>Berfungsi mengontrol sistem pengapian dan penerangan, sekaligus untuk mengunci setang kemudi. Unit ini dilengkapi dengan anak kunci utama serta kunci penutup lubang kunci.</p>
-                    <div class="key-states">
-                        <div class="key-state-item"><span>ON:</span> Semua sirkuit listrik terhubung dan lampu sepeda motor dinyalakan. Kunci kontak tidak dapat dicabut.</div>
-                        <div class="key-state-item"><span>OFF:</span> Semua aliran listrik terputus. Kunci kontak dapat dicabut.</div>
-                        <div class="key-state-item"><span>LOCK:</span> Kemudi terputus dan seluruh sistem kelistrikan terputus. Kunci Kontak dapat dicabut.</div>
+                    <div class="img-slot-grid">
+                        <div class="img-slot-card">
+                            <!-- Ganti div .img-placeholder di bawah dengan <img src="nama-gambar-1.jpg" alt="Kunci Kontak"> jika foto sudah diupload ke GitHub -->
+                            <div class="img-placeholder">[ TEMPAT GAMBAR 1: KUNCI KONTAK &amp; PENGUNCI SETANG ]</div>
+                            <p>Berfungsi mengontrol Sistem Pengapian dan Penerangan, serta mengunci Setang Kemudi.</p>
+                        </div>
+                        <div class="img-slot-card">
+                            <!-- Ganti div .img-placeholder di bawah dengan <img src="nama-gambar-2.jpg" alt="Anak Kunci & Shutter"> jika foto sudah diupload ke GitHub -->
+                            <div class="img-placeholder">[ TEMPAT GAMBAR 2: ANAK KUNCI UTAMA &amp; KUNCI SHUTTER ]</div>
+                            <p>Unit ini dilengkapi Anak Kunci Utama dan Kunci Penutup Lubang Kunci/Shutter.</p>
+                        </div>
                     </div>
+                </div>
+
+                <!-- 1.B. SARAN -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>1.B. Saran</h3>
+                        <span class="badge">TIP</span>
+                    </div>
+                    <ul>
+                        <li>Jangan biarkan kunci kontak berada pada posisi <strong>ON</strong> saat mesin mati agar daya aki (baterai) tidak terkuras habis.</li>
+                        <li>Saat kunci pertama kali diputar ke posisi <strong>ON</strong>, akan terdengar suara berdengung singkat dari pompa bahan bakar (<em>fuel pump</em>); hal tersebut normal dan bukan merupakan kerusakan.</li>
+                        <li>Apabila setang sulit dikunci pada posisi <strong>LOCK</strong>, putar sedikit setang ke kanan atau ke kiri sambil menekan dan memutar kunci.</li>
+                    </ul>
+                </div>
+
+                <!-- 1.C. PERINGATAN -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>1.C. Peringatan</h3>
+                        <span class="badge warn">WARNING</span>
+                    </div>
+                    <p><strong>Jangan pernah memutar kunci kontak ke posisi "OFF" atau "LOCK" saat sepeda motor sedang berjalan.</strong> Jika dilakukan, seluruh sistem kelistrikan akan terputus seketika dan setang dapat terkunci, sehingga berisiko menyebabkan hilangnya kendali atau kecelakaan.</p>
                 </div>
             </div>
         </section>
@@ -676,7 +718,7 @@
     </main>
 
     <footer>
-        <p><span>MY RETRO by Vizmind Motorcycle</span> &bull; Panduan Digital berdasarkan Manual Book Resmi Yamaha XSR 155</p>
+        <p>Panduan Digital berdasarkan Manual Petunjuk Resmi Yamaha XSR 155</p>
     </footer>
 
     <script>

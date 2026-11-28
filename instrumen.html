@@ -226,30 +226,32 @@
             font-weight: 700;
         }
 
-        /* Slot Gambar & Video di Dalam Kartu */
-        .img-slot-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        .img-slot-card {
+        /* Slot Video Tunggal (YouTube Shorts Responsif) */
+        .single-media-box {
             background-color: #0D0D0D;
             border: 1px solid #262626;
-            padding: 0.85rem;
+            padding: 0.95rem;
+            margin-top: 0.5rem;
             display: flex;
             flex-direction: column;
-            gap: 0.65rem;
+            gap: 0.85rem;
         }
 
-        .img-slot-card img,
-        .img-slot-card video {
+        .yt-shorts-wrapper {
             width: 100%;
-            height: auto;
-            display: block;
+            max-width: 340px;
+            aspect-ratio: 9 / 16;
+            margin: 0 auto;
             border: 1px solid var(--accent-yellow);
             background-color: #000000;
+            overflow: hidden;
+        }
+
+        .yt-shorts-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
         }
 
         /* Sub-grid inside Multi-Function Display */
@@ -394,26 +396,23 @@
         <section class="section-block" data-category="kunci">
             <h2 class="section-title">1. Kunci Kontak</h2>
             <div class="grid">
-                <!-- 1.A. PENJELASAN -->
+                <!-- 1.A. PENJELASAN (GABUNG JADI 1 DENGAN VIDEO YOUTUBE) -->
                 <div class="card full-span">
                     <div class="card-header">
                         <h3>1.A. Penjelasan</h3>
                         <span class="badge">MAIN SWITCH</span>
                     </div>
-                    <div class="img-slot-grid">
-                        <!-- Lingkaran Biru: Gambar letak-kunci.PNG -->
-                        <div class="img-slot-card">
-                            <img src="letak-kunci.PNG" alt="Letak Kunci Kontak Yamaha XSR 155">
-                            <p>Berfungsi mengontrol Sistem Pengapian dan Penerangan, serta mengunci Setang Kemudi.</p>
+                    <div class="single-media-box">
+                        <div class="yt-shorts-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/gGIF6izcyfM"
+                                title="Kunci Kontak Yamaha XSR 155"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
                         </div>
-                        <!-- Lingkaran Merah: Video anak-kunci.MP4 -->
-                        <div class="img-slot-card">
-                            <video controls playsinline preload="metadata">
-                                <source src="anak-kunci.MP4" type="video/mp4">
-                                Browser Anda tidak mendukung pemutaran video.
-                            </video>
-                            <p>Unit ini dilengkapi Anak Kunci Utama dan Kunci Pembuka/Penutup Lubang.</p>
-                        </div>
+                        <p>Berfungsi mengontrol Sistem Pengapian dan Penerangan, serta mengunci Setang Kemudi. Unit ini dilengkapi Anak Kunci Utama dan Kunci Pembuka/Penutup Lubang.</p>
                     </div>
                 </div>
 
@@ -424,7 +423,7 @@
                         <span class="badge">TIP</span>
                     </div>
                     <ul>
-                        <li>Untuk mencegah listrik terkuras, jangan biarkan kunci pada <strong>posisi aktif (ON)</strong>tanpa menyalakan mesin.</li>
+                        <li>Untuk mencegah listrik terkuras, jangan biarkan kunci pada <strong>posisi aktif (ON)</strong> tanpa menyalakan mesin.</li>
                         <li>Jika kemudi tidak dapat terkunci, coba <strong>putar sedikit setang kemudi kembali ke arah kanan atau kiri</strong>.</li>
                         <li><span class="vizmind-tag">[Vizmind Motorcycle]</span> Penempatan Kunci Pembuka/Penutup Lubang ke posisinya harus tegak lurus agar mencegah terjadinya <strong>selek pada permukaan</strong>.</li>
                     </ul>
@@ -665,128 +664,4 @@
                         <h3>5.b. Bahan Bakar</h3>
                         <span class="badge">10.4 LITER</span>
                     </div>
-                    <p>Pastikan tersedia bensin dalam jumlah yang cukup di dalam tangki. Sebelum mengisi bensin, matikan mesin dan pastikan tidak orang yang duduk di atas sepeda motor. Kapasitas Tangki Bahan Bakar adalah <strong>10.4 Liter</strong>.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>5.c. Catalytic Converter</h3>
-                        <span class="badge">EXHAUST</span>
-                    </div>
-                    <p>Terpasang pada sistem knalpot untuk mengurangi emisi gas buang berbahaya.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>5.d. Jok</h3>
-                        <span class="badge">SEAT</span>
-                    </div>
-                    <p>Dilepas dengan memutar kunci jok searah jarum jam sambil mengangkat bagian belakang jok. Untuk memasangnya kembali, masukkan pengait bagian depan jok kedudukannya lalu tekan bagian belakang hingga terkunci.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>5.e. Gantungan Helm</h3>
-                        <span class="badge warn">HELMET HOLDER</span>
-                    </div>
-                    <p>Terletak di balik Jok Pengendara. Jangan Kendarai Sepeda Motor Jika Helm masih tergantung di gantungannya karena helm dapat menabrak objek sehingga mengakibatkan hilang kendali atau bahkan kecelakaan.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>5.f. Standar Samping</h3>
-                        <span class="badge warn">SIDESTAND</span>
-                    </div>
-                    <p>Terletak di sisi kiri rangka dan dioperasikan menggunakan kaki saat motor ditahan tegak. Motor dilarang dikendarai saat standar samping masih turun karena berisiko menyentuh jalan dan menyebabkan hilangnya kendali.</p>
-                </div>
-
-                <div class="card full-span">
-                    <div class="card-header">
-                        <h3>5.g. Sistem Pemutus Sirkuit Starter</h3>
-                        <span class="badge warn">CUT-OFF SYSTEM</span>
-                    </div>
-                    <p>Mencegah mesin menyala saat transmisi masuk gigi kecuali tuas kopling ditarik. Sistem ini hanya mengizinkan mesin distarter dalam kondisi masuk gigi apabila standar samping sudah dinaikkan dan tuas kopling ditarik penuh.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Panduan Digital berdasarkan Manual Petunjuk Resmi Yamaha XSR 155</p>
-    </footer>
-
-    <script>
-        // Filter Kategori Navigasi
-        function filterSection(category, btnElement) {
-            const buttons = document.querySelectorAll('.nav-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
-
-            const sections = document.querySelectorAll('.section-block');
-            sections.forEach(sec => {
-                if (category === 'all' || sec.getAttribute('data-category') === category) {
-                    sec.classList.remove('hidden');
-                } else {
-                    sec.classList.add('hidden');
-                }
-            });
-
-            // Tampilkan Simulator HANYA saat tab "3. Panel Meter" ('panel') aktif
-            const simulator = document.getElementById('mfd-simulator');
-            if (category === 'panel') {
-                simulator.classList.remove('hidden');
-            } else {
-                simulator.classList.add('hidden');
-            }
-        }
-
-        // Simulator Tombol SELECT (maju) & RESET (mundur) sesuai urutan menu 3.f.1 - 3.f.8
-        const meterModes = [
-            {
-                title: "ODO: 012450 km",
-                desc: "3.f.1. Odometer (ODO): Mencatat total jarak tempuh kendaraan dan akan terkunci di angka 999.999 (tidak dapat di-reset)."
-            },
-            {
-                title: "TRIP 1: 142.8 km",
-                desc: "3.f.2. Tripmeter 1 (TRIP 1): Mengukur jarak tempuh sejak terakhir kali di-reset, dan akan kembali menghitung dari awal setelah mencapai 9.999,9."
-            },
-            {
-                title: "TRIP 2: 045.2 km",
-                desc: "3.f.2. Tripmeter 2 (TRIP 2): Mengukur jarak tempuh sejak terakhir kali di-reset, dan akan kembali menghitung dari awal setelah mencapai 9.999,9."
-            },
-            {
-                title: "TRIP F: 003.4 km",
-                desc: "3.f.3. Fuel Reserve Tripmeter (TRIP F): Muncul otomatis saat segmen bensin terakhir berkedip untuk menghitung jarak tempuh menggunakan bensin cadangan (otomatis hilang setelah isi ulang dan jalan 5 km)."
-            },
-            {
-                title: "CLOCK: 10:45",
-                desc: "3.f.4. Jam: Menggunakan format waktu 12 jam yang diatur melalui kombinasi tombol 'SELECT' dan 'RESET'."
-            },
-            {
-                title: "INSTANT: 42.5 km/L",
-                desc: "3.f.5. Konsumsi Bahan Bakar Seketika: Menampilkan konsumsi bensin secara real-time dalam satuan 'km/L' atau 'L/100 km' (menampilkan '_ .' jika kecepatan di bawah 10 km/jam)."
-            },
-            {
-                title: "AVE FUEL: 44.1 km/L",
-                desc: "3.f.6. Konsumsi Bahan Bakar Rata-rata: Menampilkan rata-rata konsumsi bensin ('AVE_ . km/L' atau 'AVE_ . L/100 km') sejak terakhir kali di-reset."
-            },
-            {
-                title: "AVE SPEED: 48 km/h",
-                desc: "3.f.7. Kecepatan Rata-rata: Menampilkan kecepatan rata-rata perjalanan ('AVE_ . km/h') sejak terakhir kali di-reset."
-            },
-            {
-                title: "BACKLIGHT: bL-03",
-                desc: "3.f.8. Pengaturan Kecerahan Layar: Menyediakan tiga tingkat kecerahan layar ('bL-01', 'bL-02', atau 'bL-03') yang hanya boleh diubah saat motor berhenti total."
-            }
-        ];
-
-        let currentModeIndex = 0;
-
-        function cycleMode(direction) {
-            currentModeIndex = (currentModeIndex + direction + meterModes.length) % meterModes.length;
-            document.getElementById('sim-title').textContent = meterModes[currentModeIndex].title;
-            document.getElementById('sim-desc').textContent = meterModes[currentModeIndex].desc;
-        }
-    </script>
-</body>
-</html>
+                    <p>Pastikan tersedia bensin dalam jumlah yang cukup di
